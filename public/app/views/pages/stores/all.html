@@ -1,0 +1,39 @@
+<div class="page-header">
+	<h1>
+		Stores 
+		<a href="/stores/create" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus"></span> 
+			New Store
+		</a>
+	</h1>
+
+</div>
+
+<div class="jumbotron text-center" ng-show="store.processing">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading Stores...</p>
+</div>
+
+<table class="table table-bordered table-striped" ng-show="store.stores">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Opening Hours</th>
+			<th>Web</th>
+			<th class="col-sm-2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="shop in store.stores">
+			<td>{{ shop.name }}</td>
+			<td>{{ shop.address }}</td>
+			<td>{{ shop.openingHours }}</td>
+			<td>{{ shop.webAdr }}</td>
+			<td class="col-sm-2">
+				<a ng-href="/stores/{{ shop._id }}" class="btn btn-danger">Edit</a>
+				<a href="#" ng-click="store.deleteStore(shop._id)" class="btn btn-primary">Delete</a>
+			</td>
+		</tr>
+	</tbody>
+</table>

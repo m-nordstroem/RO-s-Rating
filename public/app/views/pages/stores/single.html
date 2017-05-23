@@ -1,0 +1,81 @@
+<div class="page-header">
+	<h1 ng-if="store.type == 'create'">Create Store</h1>
+	<h1 ng-if="store.type == 'edit'">Edit Store</h1>
+</div>
+
+<form class="form-horizontal" ng-submit="store.saveStore()">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.name">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.address">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Rating Number</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.ratingNum">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Facilities</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.facilities">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Opening Hours</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.openingHours">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Web Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.webAdr">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Mail Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.mailAdr">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Store Image</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="store.storeData.storeImage">
+		</div>
+	</div>
+	
+	<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-6">
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="store.type == 'create'">Create Store</button>
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="store.type == 'edit'">Update Store</button>
+	</div>
+	</div>
+
+</form>
+
+<!--div class="row show-hide-message" ng-show="store.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		
+		<div class="alert alert-info">
+			{{ store.message }}
+		</div>
+
+	</div-->
+</div>
