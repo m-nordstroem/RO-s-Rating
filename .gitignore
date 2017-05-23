@@ -1,0 +1,4 @@
+# Ignoring files related ONLY to phpstorm
+.idea/
+# Ignoring "node_modules" folder
+/node_modules/

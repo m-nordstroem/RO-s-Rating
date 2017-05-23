@@ -82,7 +82,7 @@ angular.module('storeCtrl', ['storeService'])
 		});
 
 	// function to save the store
-	vm.storeUser = function() {
+	vm.saveStore = function() {
 		vm.processing = true;
 		vm.message = '';
 
