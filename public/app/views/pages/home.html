@@ -1,4 +1,4 @@
-<div class="jumbotron text-center">
+<!--div class="jumbotron text-center">
 	<h1>Welcome to the User CRM!</h1>
 
 	<div ng-if="!main.loggedIn">
@@ -10,4 +10,67 @@
 		<p>Manage your users.</p>
 		<a href="/users" class="btn btn-primary">View Users</a>
 	</div>
+</div-->
+
+<div ng-if="!main.loggedIn">
+	<div class="jumbotron text-center">
+		<h1>Welcome to the RO's Review</h1>
+		<p>Login to see the reviews.</p>
+		<a href="/login" class="btn btn-primary">Login</a>
+	</div>
 </div>
+
+<div ng-if="main.loggedIn">
+	<div class="jumbotron jumbotron-home text-center">
+		<div class="search">
+			<h1>Search for shops</h1>
+			<br>
+
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input class="form-control input-lg" ng-model="query"  placeholder=" Find shop" autofocus />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+		</div>
+	</div>
+
+	<div class="order-by">
+		<div class="formcenter">
+			<label class="formgroup">Order by:
+		      <select ng-model="shopOrder">
+		        <option value="name" selected>Name</option>
+		        <option value="stars">Star average</option>
+		      </select>
+		    </label>
+
+		    <label class="formgroup">
+		      <input type="radio" ng-model="direction" name="direction" checked>
+		      ascending
+		     </label>
+		    <label class="formgroup">
+		      <input type="radio" ng-model="direction" name="direction" value="reverse">
+		      descending
+		    </label>
+	    </div>
+	</div>
+
+	<div class="shoplist">
+		  <ul ng-show="query">
+		    <li ng-animate="'animate'" class="shop cf" ng-repeat="shop in shops | filter: query | orderBy: shopOrder:direction">
+		      <a href="#/shops/{{shops.indexOf(shop)}}">
+		        <div class="info">
+		          <h2>{{shop.name}}</h2>
+		          <h3>{{shop.website}}</h3>
+		        </div>
+		      </a>
+		    </li>
+		  </ul>  
+	</div>
+</div>
+

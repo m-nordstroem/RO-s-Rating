@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="col-xs-12 col-md-9">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<p class="rating" rating-stars rating="vm.data.detail.rating"></p>
+				<p>{{ vm.data.storeData.address }}</p>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">Opening hours</h2>
+					</div>
+					<div class="panel-body">
+						<!-- Opening times to go here -->
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">Facilities</h2>
+					</div>
+					<div class="panel-body">
+						<span class="label label-warning label-facility" ng-model="store.detailData.facility">
+							<span class="glyphicon glyphicon-ok"></span>
+							{{ facility }}
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 store-img">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">Store images</h2>
+					</div>
+				<div class="panel-body">
+					<img class="img-responsive thumbnail" src="assets/img/{{ vm.data.detail.storeImage }}" alt="">
+					<!--img class="img-responsive thumbnail" src="assets/img/thumb.png" alt=""-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-primary review-panel">
+				<div class="panel-heading"><a href="" class="btn btn-default pullright">Add rating</a>
+					<h2 class="panel-title">Customer ratings</h2>
+				</div>
+				<div class="panel-body review-container">
+					<div class="rating" ng-repeat="rating in vm.data.store.ratings">
+						<div class="row">
+							<div class="well well-sm rating-header">
+								<span class="rating" rating-stars rating="rating.ratingNum"></span>
+								<span class="ratingAuthor">{{ rating.author }}</span>
+								<small class="ratingTimestamp">{{ rating.createdOn }}</small>
+							</div>
+							<div class="col-xs-12">
+								<p ng-bind-html="rating.ratingText | addHtmlLineBreaks"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="col-xs-12 col-md-3">
+		<p class="lead">{{ vm.data.store.name }} is on RO' Rating because it has accessible wifi and space to sit down with your laptop and get some work done.</p>
+		<p>If you've been and you like it - or if you don't - please leave a review to help other people just like you.</p>
+	</div>
+</div>

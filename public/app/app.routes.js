@@ -58,6 +58,13 @@ angular.module('app.routes', ['ngRoute'])
 			templateUrl: 'app/views/pages/stores/single.html',
 			controller: 'storeEditController',
 			controllerAs: 'store'
+		})
+
+		// page to view a store
+		.when('/stores/:store_id/ratings', {
+			templateUrl: 'app/views/pages/stores/detail.html',
+			controller: 'detailController',
+			controllerAs: 'detail'
 		});
 
 	$locationProvider.html5Mode(true);

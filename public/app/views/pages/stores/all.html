@@ -17,6 +17,7 @@
 <table class="table table-bordered table-striped" ng-show="store.stores">
 	<thead>
 		<tr>
+			<th>Link</th>
 			<th>Name</th>
 			<th>Address</th>
 			<th>Opening Hours</th>
@@ -26,6 +27,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="shop in store.stores">
+			<td><a href="/stores/{{ shop._id }}/ratings"><span class="glyphicon glyphicon-link"></span></a></td>
 			<td>{{ shop.name }}</td>
 			<td>{{ shop.address }}</td>
 			<td>{{ shop.openingHours }}</td>
