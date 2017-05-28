@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>User CRM</title>
+	<title>RO's Rating</title>
 
 	<!-- FOR ANGULAR ROUTING -->
 	<base href="/">
@@ -23,11 +23,13 @@
 	<script src="app/controllers/mainCtrl.js"></script>
 	<script src="app/controllers/userCtrl.js"></script>
 	<script src="app/controllers/storeCtrl.js"></script>
+	<script src="app/controllers/detailCtrl.js"></script>
 
 	<!-- services -->
 	<script src="app/services/authService.js"></script>
 	<script src="app/services/userService.js"></script>
 	<script src="app/services/storeService.js"></script>
+	<script src="app/services/detailService.js"></script>
 
 	<!-- main Angular app files -->
 	<script src="app/app.routes.js"></script>
@@ -40,10 +42,10 @@
 	<div class="navbar navbar-inverse" ng-if="main.loggedIn">
 	<div class="container">
 		<div class="navbar-header">
-			<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-home"></span> RO's Rating</a>
+			<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-search"></span> RO's Rating</a>
 		</div>	
 		<ul class="nav navbar-nav">
-			<li><a href="/stores"><span class="glyphicon glyphicon-search"></span> Stores</a></li>		
+			<li><a href="/stores"><span class="glyphicon glyphicon-home"></span> Stores</a></li>		
 			<li><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

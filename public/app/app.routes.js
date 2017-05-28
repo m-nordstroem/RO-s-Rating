@@ -64,7 +64,7 @@ angular.module('app.routes', ['ngRoute'])
 		.when('/stores/:store_id/ratings', {
 			templateUrl: 'app/views/pages/stores/detail.html',
 			controller: 'detailController',
-			controllerAs: 'detail'
+			controllerAs: 'detail' // Måske 'vm'
 		});
 
 	$locationProvider.html5Mode(true);

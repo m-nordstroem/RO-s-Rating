@@ -14,7 +14,7 @@ angular.module('detailCtrl', ['detailService'])
 			vm.detailData = data;
 		});
 
-/*		
+/*	
 		// call the storeService function to update 
 		Store.update($routeParams.store_id, vm.storeData)
 			.success(function(data) {
