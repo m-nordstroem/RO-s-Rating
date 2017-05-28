@@ -8,5 +8,8 @@
     "jsonwebtoken": "latest",
     "mongoose": "latest",
     "morgan": "latest"
+  },
+  "scripts": {
+    "start": "nodemon server"
   }
 }
