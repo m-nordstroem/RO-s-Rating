@@ -14,8 +14,8 @@
 
 <div ng-if="!main.loggedIn">
 	<div class="jumbotron text-center">
-		<h1>Welcome to the RO's Review</h1>
-		<p>Login to see the reviews.</p>
+		<h1>Welcome to the RO's Rating</h1>
+		<p>Login to see the ratings.</p>
 		<a href="/login" class="btn btn-primary">Login</a>
 	</div>
 </div>
@@ -23,7 +23,7 @@
 <div ng-if="main.loggedIn">
 	<div class="jumbotron jumbotron-home text-center">
 		<div class="search">
-			<h1>Search for shops</h1>
+			<h1>Search for stores</h1>
 			<br>
 
             <div id="custom-search-input">
@@ -66,7 +66,7 @@
 		      <a href="#/shops/{{shops.indexOf(shop)}}">
 		        <div class="info">
 		          <h2>{{shop.name}}</h2>
-		          <h3>{{shop.website}}</h3>
+		          <h3>{{shop.webAdr}}</h3>
 		        </div>
 		      </a>
 		    </li>

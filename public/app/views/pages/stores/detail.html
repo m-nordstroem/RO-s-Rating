@@ -2,36 +2,70 @@
 	<div class="col-xs-12 col-md-9">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<p class="rating" rating-stars rating="vm.data.detail.rating"></p>
-				<p>{{ vm.data.storeData.address }}</p>
+
 				<div class="panel panel-primary">
-					<div class="panel-heading">
+					<div class="panel-heading" ng-model="store.storeData.name">
+						<h2 class="panel-title">Store name</h2>
+					</div>
+					<div class="panel-body">
+						{{ store.storeData.name }}
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading" ng-model="store.storeData.address">
+						<h2 class="panel-title">Store address</h2>
+					</div>
+					<div class="panel-body">
+						{{ store.storeData.address }}
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading" ng-model="store.storeData.openingHours">
 						<h2 class="panel-title">Opening hours</h2>
 					</div>
 					<div class="panel-body">
-						<!-- Opening times to go here -->
+						{{ store.storeData.openingHours }}
 					</div>
 				</div>
+
 				<div class="panel panel-primary">
-					<div class="panel-heading">
+					<div class="panel-heading" ng-model="store.storeData.facilities">
 						<h2 class="panel-title">Facilities</h2>
 					</div>
 					<div class="panel-body">
-						<span class="label label-warning label-facility" ng-model="store.detailData.facility">
-							<span class="glyphicon glyphicon-ok"></span>
-							{{ facility }}
-						</span>
+						{{ store.storeData.facilities }}
 					</div>
 				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading" ng-model="store.storeData.webAdr">
+						<h2 class="panel-title">Web site</h2>
+					</div>
+					<div class="panel-body">
+						{{ store.storeData.webAdr }}
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading" ng-model="store.storeData.mailAdr">
+						<h2 class="panel-title">Mail</h2>
+					</div>
+					<div class="panel-body">
+						{{ store.storeData.mailAdr }}
+					</div>
+				</div>
+
 			</div>
 			<div class="col-xs-12 col-sm-6 store-img">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h2 class="panel-title">Store images</h2>
 					</div>
-				<div class="panel-body">
-					<img class="img-responsive thumbnail" src="assets/img/{{ vm.data.detail.storeImage }}" alt="">
-					<!--img class="img-responsive thumbnail" src="assets/img/thumb.png" alt=""-->
+				<div class="panel-body" ng-model="store.storeData.storeImage">
+					<!--img class="img-responsive thumbnail" src="assets/img/{{ store.detailData.storeImage }}" alt=""-->
+					<img class="img-responsive thumbnail" src="assets/img/thumb.png" alt="">
 				</div>
 			</div>
 		</div>
@@ -43,15 +77,15 @@
 					<h2 class="panel-title">Customer ratings</h2>
 				</div>
 				<div class="panel-body review-container">
-					<div class="rating" ng-repeat="rating in vm.data.store.ratings">
+					<div class="rating" ng-repeat="review in store.storeData.ratings">
 						<div class="row">
 							<div class="well well-sm rating-header">
-								<span class="rating" rating-stars rating="rating.ratingNum"></span>
-								<span class="ratingAuthor">{{ rating.author }}</span>
-								<small class="ratingTimestamp">{{ rating.createdOn }}</small>
+								<span class="rating" rating-stars rating="review.ratingNum"></span>
+								<span class="ratingAuthor">{{ review.author }}</span>
+								<small class="ratingTimestamp">{{ review.createdOn }}</small>
 							</div>
 							<div class="col-xs-12">
-								<p ng-bind-html="rating.ratingText | addHtmlLineBreaks"></p>
+								<p ng-bind-html="review.ratingText | addHtmlLineBreaks">{{ review.ratingText }}</p>
 							</div>
 						</div>
 					</div>
@@ -61,7 +95,7 @@
 	</div>
 </div>
 	<div class="col-xs-12 col-md-3">
-		<p class="lead">{{ vm.data.store.name }} is on RO' Rating because it has accessible wifi and space to sit down with your laptop and get some work done.</p>
+		<p class="lead">{{ store.storeData.name }} is on RO' Rating because it has accessible wifi and space to sit down with your laptop and get some work done.</p>
 		<p>If you've been and you like it - or if you don't - please leave a review to help other people just like you.</p>
 	</div>
 </div>

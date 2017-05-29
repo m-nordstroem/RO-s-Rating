@@ -60,12 +60,19 @@ angular.module('app.routes', ['ngRoute'])
 			controllerAs: 'store'
 		})
 
+		// page to edit a store
+		.when('/stores/:store_id/ratings', {
+			templateUrl: 'app/views/pages/stores/detail.html',
+			controller: 'storeEditController',
+			controllerAs: 'store'
+		})
+/*
 		// page to view a store
 		.when('/stores/:store_id/ratings', {
 			templateUrl: 'app/views/pages/stores/detail.html',
 			controller: 'detailController',
 			controllerAs: 'detail' // Måske 'vm'
-		});
+		})*/;
 
 	$locationProvider.html5Mode(true);
 
